@@ -1,0 +1,26 @@
+# 文件夹监听配置
+watcher:
+  watch_folder: "./"              # 监听当前程序所在目录
+  archive_folder: "./processed"   # 已处理文件归档目录（可选）
+  file_check_retries: 5           # 文件稳定性检查重试次数
+  check_interval: 0.2             # 文件稳定性检查间隔（秒）
+  supported_extensions:           # 支持的文件扩展名
+    - ".xml"
+
+# 数据库配置
+database:
+  path: "./eye_clinic.db"         # 数据库文件路径（程序同目录）
+
+# 日志配置
+logging:
+  level: INFO                     # DEBUG/INFO/WARNING/ERROR
+  log_file: "./logs/app.log"      # 日志文件路径
+  max_bytes: 10485760             # 最大文件大小 10MB
+  backup_count: 5                 # 备份文件数量
+
+# Excel导出配置
+export:
+  default_filename: "验光数据_{date}.xlsx"
+  sheet_name: "验光数据"
+  include_headers: true
+  date_format: "%Y-%m-%d %H:%M:%S"
